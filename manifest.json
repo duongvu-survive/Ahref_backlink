@@ -1,0 +1,44 @@
+{
+    "name": "Ahref Backlink",
+    "short_name": "abl",
+    "version": "0.0.1",
+    "manifest_version": 2,
+    "description": "",
+    "web_accessible_resources": ["images/logo.png"],
+    "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+    "browser_action": {
+      "default_icon": "images/logo.png",
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+      {
+        "matches": [
+          "https://*.ahrefs.com/*",
+          "https://ahrefs.com/*"
+        ],
+        "js": [
+          "libs/vue.min.js",
+          "libs/elementUI.min.js",
+          "libs/table.js",
+          "libs/script.js"
+        ],
+        "css": ["libs/css/style.css"],
+        "run_at": "document_start"
+      }
+    ],
+    "permissions": [
+      "tabs",
+      "storage",
+      "notifications",
+      "clipboardWrite",
+      "cookies",
+      "downloads"
+    ],
+    "icons": {
+      "110": "images/logo.png"
+    },
+    "background": {
+      "scripts": ["background.js"]
+    },
+    "homepage_url": "https://alphasty.com"
+  }
